@@ -1,0 +1,54 @@
+<md-toolbar color='primary'>
+  <span>Wellness Program</span>
+
+  <span class="app-toolbar-filler"></span>
+</md-toolbar>
+
+<div fxLayoutAlign="center">
+  <md-card  class="title-card"><h1>Liste des Equipes</h1></md-card>
+</div>
+
+<div class="card">
+  <form (ngSubmit)="addTeamToChallenge(id)">
+    <md-card *ngFor="let team of teams">
+
+      <md-card-header>
+        <div md-card-avatar class="header-card" ></div>
+        <md-card-title><h2>{{team.name | uppercase}}</h2></md-card-title>
+      </md-card-header>
+
+      <md-card-content>
+        <md-chip-list>
+          <md-chip color="primary" selected="true"> MEMBRES: </md-chip>
+          <div *ngFor="let member of team.members" >
+            <md-chip *ngIf="member != null">
+              {{ member }}
+            </md-chip>
+          </div>
+        </md-chip-list>
+      </md-card-content>
+
+      <div fxLayoutAlign="end">
+        <md-checkbox name="selected" [value]="team.name" [(ngModel)]="team.selected"
+                     (change)="updateChecked()"></md-checkbox>
+      </div>
+
+    </md-card>
+
+    <span class="app-action">
+    <button md-fab color="primary" type="submit"><md-icon>check</md-icon></button>
+  </span>
+
+  </form>
+</div>
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,50 @@
+<md-toolbar color='primary'>
+  <span>Wellness Program</span>
+  <span class="app-toolbar-filler"></span>
+  <button md-button>{{ user.firstName | uppercase }} {{ user.lastName | uppercase}}</button>
+</md-toolbar>
+
+
+  <md-card  class="card">
+    <md-card-header fxLayoutAlign="start stretch">
+      <md-card-title ><h2>{{ team.name }}</h2></md-card-title>
+    </md-card-header>
+
+    <md-card-content fxLayoutAlign="start stretch">
+      <md-chip-list>
+        <md-chip color="primary" selected="true"> MEMBRES: </md-chip>
+        <div *ngFor="let member of team.members" >
+          <md-chip *ngIf="member != null">
+            {{ member }}
+          </md-chip>
+        </div>
+      </md-chip-list>
+    </md-card-content>
+  </md-card>
+
+
+
+<div fxLayoutAlign="center" fxLayoutGap="10px">
+  <button md-raised-button color="primary" [routerLink]="['/home-page-admin/'+idAdmin+'/team-edit', team._id]">EDITER</button>
+  <button md-raised-button color="primary" type="button" (click)="deleteTeam(team._id)">SUPPRIMER</button>
+  <button md-raised-button color="primary" [routerLink]="['/home-page-admin/'+idAdmin+'/teams']">EQUIPES</button>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

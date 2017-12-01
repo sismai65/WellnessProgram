@@ -1,0 +1,22 @@
+.header-card{
+  background-image: url('../../assets/team.jpg');
+}
+
+.card{
+  margin: 20px;
+}
+
+.app-action {
+  display: inline-block;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}
+
+md-card{
+  margin: 10px;
+}
+
+.end{
+  text-align: right;
+}

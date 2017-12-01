@@ -1,0 +1,28 @@
+.header-card{
+  background-image: url('../../assets/challenge.jpg');
+}
+
+.card{
+  margin: 20px;
+}
+
+md-card{
+  margin: 10px;
+}
+
+.app-toolbar-filler {
+  flex: 1 1 auto;
+}
+
+.app-action {
+  display: inline-block;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}
+
+.app-list {
+  border: 2px solid rgba(0,0,0,0.12);
+  width: 350px;
+  margin: 20px;
+}

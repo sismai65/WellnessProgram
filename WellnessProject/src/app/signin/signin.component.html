@@ -1,0 +1,46 @@
+<md-toolbar color='primary'>
+  <span>Wellness Program</span>
+
+  <span class="app-toolbar-filler"></span>
+
+</md-toolbar>
+
+<div fxLayoutAlign="center">
+  <md-card class="card">
+    <md-card-header fxLayoutAlign="center" fxLayoutGap="20px">
+      <md-card-title > <h2>Formulaire de Connexion</h2></md-card-title>
+    </md-card-header><hr>
+
+    <md-card-content >
+      <form novalidate #signinForm="ngForm" (ngSubmit)="onSubmit()">
+        <p>
+          <md-input-container class="full-width" >
+            <input  mdInput type="email" name="email" [(ngModel)]="credentials.email"
+                    placeholder="Entrer votre email" required email>
+          </md-input-container>
+
+        </p>
+        <p>
+          <md-input-container class="full-width">
+            <input mdInput type="password" name="password" [(ngModel)]="credentials.password"
+                   placeholder="Entrer votre mot de passe" required>
+          </md-input-container>
+        </p>
+
+        <p>
+          <button md-raised-button type="submit">Se Connecter</button>
+        </p>
+      </form>
+    </md-card-content>
+  </md-card>
+</div>
+
+<!--<md-card>
+  <p> Form: {{signinForm.value | json}}</p>
+  <p> Form status: {{signinForm.control.status}}</p>
+
+  <p>{{error}}</p>
+</md-card>-->
+
+
+

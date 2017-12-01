@@ -1,0 +1,33 @@
+<md-toolbar color='primary'>
+  <span>Wellness Program</span>
+  <span class="app-toolbar-filler"></span>
+  <div md-card-avatar></div>
+  <button md-button>{{ user.firstName | uppercase }} {{ user.lastName | uppercase}}</button>
+</md-toolbar>
+
+
+<div >
+  <nav md-tab-nav-bar >
+    <a md-tab-link *ngFor="let link of Links" [routerLink]="link.route"
+       routerLinkActive #rla="routerLinkActive" [active]="rla.isActive">
+      {{link.page}}
+    </a>
+  </nav>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

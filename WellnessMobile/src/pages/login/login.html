@@ -1,0 +1,32 @@
+<ion-header>
+ <ion-navbar color='primary'>
+    <ion-title>Wellness Program</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <form (ngSubmit)="onSubmit()">
+    <ion-list>
+          <ion-item>
+            <ion-label color="primary" floating>Email:</ion-label>
+            <ion-input type="email" name="email" [(ngModel)]="credentials.email" required email></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label color="primary" floating>Mot de passe:</ion-label>
+            <ion-input type="password" name="password" [(ngModel)]="credentials.password"></ion-input>
+          </ion-item>
+          <ion-item>
+            <button ion-button round full type="submit">Connexion</button>
+          </ion-item>
+    </ion-list>
+  </form>    
+ 
+</ion-content>  
+   
+      
+   
+  
+
+

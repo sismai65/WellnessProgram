@@ -1,0 +1,74 @@
+<md-toolbar color='primary'>
+  <span>Wellness Program</span>
+
+  <span class="app-toolbar-filler"></span>
+</md-toolbar>
+
+<div fxLayoutAlign="center stretch">
+  <md-card  class="card-width">
+    <md-card-header fxLayoutAlign="center stretch"><h2> Editer un Challenge </h2></md-card-header><hr>
+    <md-card-content>
+      <form  (ngSubmit)="updateChallenge(challenge._id)" #editChallengeForm="ngForm" class="challenge-edit">
+        <p fxLayoutAlign="center stretch">
+          <md-input-container class="full-width">
+            <input type="text" id="name" name="name" mdInput placeholder="Entrer le nom du challenge"
+                   [(ngModel)]="challenge.name" #name="ngModel" required>
+          </md-input-container>
+        </p>
+
+
+        <p>
+          <md-input-container class="full-width">
+          <textarea id="description" name="description" type="text" mdInput placeholder="Description du challenge"
+                    [(ngModel)]="challenge.description" #description="ngModel" required>
+          </textarea>
+          </md-input-container>
+        </p>
+
+        <p>
+          <md-input-container class="full-width">
+            <input mdInput [mdDatepicker]="picker" name="startDate" id="start" placeholder="Date de début du challenge"
+                   [(ngModel)]="challenge.startDate" #startDate="ngModel" required>
+            <button mdSuffix [mdDatepickerToggle]="picker"></button>
+          </md-input-container>
+          <md-datepicker #picker></md-datepicker>
+        </p>
+
+        <p>
+          <md-input-container class="full-width">
+            <input mdInput [mdDatepicker]="picker1" name="endDate" id="end" placeholder="Date de fin du challenge"
+                   [(ngModel)]="challenge.endDate" #endDate="ngModel" required>
+            <button mdSuffix [mdDatepickerToggle]="picker1"></button>
+          </md-input-container>
+          <md-datepicker #picker1></md-datepicker>
+        </p>
+
+        <button md-raised-button type="submit">Valider</button>
+      </form>
+    </md-card-content>
+  </md-card>
+</div>
+
+
+
+<!-- <div class="container">
+  <h1>Edit Book</h1>
+  <div class="row">
+    <div class="col-md-6">
+      <form (ngSubmit)="updateBook(book._id)" #bookForm="ngForm">
+        <div class="form-group">
+          <label for="name">ISBN</label>
+          <input type="text" class="form-control" [(ngModel)]="book.name" name="name" required>
+        </div>
+        <div class="form-group">
+          <label for="name">Title</label>
+          <input type="text" class="form-control" [(ngModel)]="challenge.description" name="description" required>
+        </div>
+
+        <div class="form-group">
+          <button type="submit" class="btn btn-success" [disabled]="!bookForm.form.valid">Update</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div> -->

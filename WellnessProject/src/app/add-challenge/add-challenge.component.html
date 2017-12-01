@@ -1,0 +1,60 @@
+<md-toolbar color='primary'>
+  <span>Wellness Program</span>
+
+  <span class="app-toolbar-filler"></span>
+</md-toolbar>
+
+<md-card  class="card-width">
+  <md-card-header fxLayoutAlign="center stretch"><h2> Ajouter un Challenge </h2></md-card-header><hr>
+  <md-card-content>
+      <form  (ngSubmit)="saveChallenge()" #addChallengeForm="ngForm" class="challenge-form">
+          <p>
+            <md-input-container class="full-width" dividerColor="{{name.errors ? 'warn' : 'primary'}}">
+              <input type="text" id="name" name="name" mdInput placeholder="Entrer le nom du challenge"
+              [(ngModel)]="challenge.name" #name="ngModel" required>
+              <md-hint>
+                <span [hidden]="name.pristine">
+                <span [hidden]="!name.errors?.required">Ce champ est obligatoire </span>
+                </span>
+              </md-hint>
+            </md-input-container>
+          </p>
+
+
+          <p>
+            <md-input-container class="full-width" dividerColor="{{description.errors ? 'warn' : 'primary'}}">
+            <textarea id="description" name="description" type="text" mdInput placeholder="Description du challenge"
+            [(ngModel)]="challenge.description" #description="ngModel" required>
+            </textarea>
+            <md-hint>
+              <span [hidden]="description.pristine">
+                <span [hidden]="!description.errors?.required">Ce champ est obligatoire</span>
+              </span>
+            </md-hint>
+            </md-input-container>
+          </p>
+
+           <p>
+            <md-input-container class="full-width">
+            <input mdInput [mdDatepicker]="picker" name="startDate" id="start" placeholder="Date de début du challenge"
+            [(ngModel)]="challenge.startDate" #startDate="ngModel" required>
+            <button mdSuffix [mdDatepickerToggle]="picker"></button>
+            </md-input-container>
+            <md-datepicker #picker></md-datepicker>
+          </p>
+
+          <p>
+            <md-input-container class="full-width">
+            <input mdInput [mdDatepicker]="picker1" name="endDate" id="end" placeholder="Date de fin du challenge"
+            [(ngModel)]="challenge.endDate" #endDate="ngModel" required>
+            <button mdSuffix [mdDatepickerToggle]="picker1"></button>
+            </md-input-container>
+            <md-datepicker #picker1></md-datepicker>
+          </p>
+
+            <button md-raised-button type="submit" [disabled]="addChallengeForm.form.invalid">Valider</button>
+      </form>
+  </md-card-content>
+</md-card>
+
+

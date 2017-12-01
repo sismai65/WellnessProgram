@@ -1,0 +1,10 @@
+.button{
+
+  margin-top: 15%;
+}
+a{
+  color: black;
+}
+.app-toolbar-filler {
+  flex: 1 1 auto;
+}

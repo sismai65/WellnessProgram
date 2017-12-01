@@ -1,0 +1,17 @@
+.card-width{
+	margin-left: 25%; 
+	margin-right: 25%;
+	margin-top: 20px;  
+	width: 50%;
+}
+
+.full-width{
+	width: 100%; 
+}
+
+form{
+	margin: 20px; 
+	margin-top: 5%;  
+	text-align: center;
+	
+}

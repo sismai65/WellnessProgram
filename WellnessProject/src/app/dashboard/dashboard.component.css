@@ -1,0 +1,24 @@
+.card{
+  margin: 20px;
+  width: 100%;
+}
+
+.app-toolbar-filler {
+  flex: 1 1 auto;
+}
+
+.app-action {
+  display: inline-block;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}
+
+md-chip-list{
+  margin-top: 20px;
+}
+
+md-chip{
+  margin-top: 20px;
+  margin-left: 10px;
+}

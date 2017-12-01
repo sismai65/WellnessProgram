@@ -1,0 +1,37 @@
+/*.card{
+  width: 100%;
+}*/
+.add_box{
+	margin-top: 20px;
+}
+
+.grid-list{
+  margin: 20px;
+}
+ .card{
+   margin: 50px;
+ }
+
+.app-list {
+  border: 2px solid rgba(0,0,0,0.12);
+  width: 350px;
+  margin: 20px;
+}
+
+.app-toolbar-filler{
+  flex: 1 1 auto;
+}
+
+.app-action-right {
+  display: inline-block;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}
+
+.app-action-left{
+  display: inline-block;
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+}

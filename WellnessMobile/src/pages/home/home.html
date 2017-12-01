@@ -1,0 +1,60 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-row justify-content-center>
+    <ion-title>
+      Page d'Accueil
+    </ion-title>
+    </ion-row>
+
+    <ion-buttons end>
+    <button ion-button icon-only (click)="logout()"><ion-icon name="power"></ion-icon></button>
+  </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<p>
+
+</p>
+
+<ion-content padding>
+   <ion-row justify-content-center>
+   <h1> Ma Progression </h1>
+  </ion-row> 
+
+  <ion-row justify-content-center>
+    <round-progress padding-vertical
+      [current]="steps"
+      [max]="max"
+      [color]="'#45ccce'"
+      [background]="'#eaeaea'"
+      [radius]="125"
+      [stroke]="20"
+      [semicircle]="true"
+      [rounded]="true"
+      [clockwise]="true"
+      [responsive]="false"
+      [duration]="800"
+      [animation]="'easeInOutQuart'"
+      [animationDelay]="0"
+    ></round-progress>
+  </ion-row>
+
+  <!-- <ion-row justify-content-center padding-vertical>
+    <button ion-button color="secondary" round (click)="start()" >Démarrer</button>
+  </ion-row> -->
+ 
+  <ion-row justify-content-center>
+    <button ion-button color="secondary" round (click)="display()" >Afficher mes pas</button>
+  </ion-row>
+
+   <ion-row justify-content-center padding-vertical>
+    <h3>
+    Nombre de pas: {{ steps }}/{{ max }} 
+    </h3>
+  </ion-row> 
+
+  <ion-row justify-content-center>
+    <button ion-button color="secondary" round (click)="synchroniser()"  >Synchroniser </button>
+  </ion-row>
+</ion-content>  
+    
+

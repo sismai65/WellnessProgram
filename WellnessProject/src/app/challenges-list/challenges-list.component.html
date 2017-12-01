@@ -1,0 +1,71 @@
+<md-toolbar color='primary'>
+  <span>Wellness Program</span>
+
+  <span class="app-toolbar-filler"></span>
+  <div md-card-avatar></div>
+  <button md-button>{{ user.firstName | uppercase }} {{ user.lastName | uppercase}}</button>
+</md-toolbar>
+
+
+
+<md-card class="card" >
+  <md-card-header fxLayoutAlign="center">
+    <md-card-title >
+      <h2>LISTE DES CHALLENGES</h2>
+    </md-card-title>
+  </md-card-header>
+  <md-grid-list cols="3"  rowHeight="3:1" >
+    <md-grid-tile fxLayoutGap="10px" *ngFor="let challenge of challenges">
+      <md-list class="app-list">
+        <md-list-item>
+          <h3 md-line> <md-icon md-prefix>group_work</md-icon> {{ challenge.name | uppercase}}</h3>
+        </md-list-item>
+        <div fxLayoutAlign="end">
+          <a  md-raised-button color="primary" [routerLink]="['/home-page-user/'+idAdmin+'/challenges/'+challenge._id]">DETAILS</a>
+        </div>
+      </md-list>
+    </md-grid-tile>
+  </md-grid-list>
+</md-card>
+<!--
+<div fxLayoutAlign="center">
+  <md-card  class="title-card"><h1>Liste des Challenges</h1></md-card>
+</div>
+
+<div class="card">
+  <md-card *ngFor="let challenge of challenges">
+
+    <md-card-header>
+      <div md-card-avatar class="header-card" ></div>
+      <md-card-title>{{challenge.name | uppercase}}</md-card-title>
+      <md-card-subtitle>
+        {{challenge.description}}
+      </md-card-subtitle>
+    </md-card-header>
+
+    <md-card-content>
+      &lt;!&ndash;<md-card-subtitle>{{challenge.description}}</md-card-subtitle>&ndash;&gt;
+    </md-card-content>
+
+    <md-card-actions>
+
+      <div fxLayoutAlign="end">
+        <a md-raised-button [routerLink]="['/home-page-user/'+idAdmin+'/challenges/'+challenge._id]">Détails</a>
+      </div>
+    </md-card-actions>
+  </md-card>
+</div>-->
+
+<span class="app-action">
+  <a md-fab color="primary" [routerLink]="['/home-page-user/'+idAdmin]"><md-icon>home</md-icon></a>
+</span>
+
+
+
+
+
+
+
+
+
+

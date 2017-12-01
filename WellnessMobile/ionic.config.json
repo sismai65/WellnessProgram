@@ -1,0 +1,8 @@
+{
+  "name": "WellnessMobile",
+  "app_id": "aba0eba7",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}

@@ -1,0 +1,30 @@
+<md-toolbar color='primary'>
+  <span>Wellness Program</span>
+
+  <span class="app-toolbar-filler"></span>
+
+</md-toolbar>
+
+<md-card  class="card-width">
+  <md-card-header fxLayoutAlign="center stretch">
+    <h2>Ajouter une Equipe </h2>
+  </md-card-header><hr>
+  <md-card-content>
+    <form (ngSubmit)="saveTeam()" #addTeamForm="ngForm" class="team-form">
+    	 <p>
+          <md-input-container class="full-width" dividerColor="{{name.errors ? 'warn' : 'primary'}}">
+            <input type="text" id="name" name="name" mdInput placeholder="Entrer le nom de l'équipe"
+            [(ngModel)]="team.name" #name="ngModel" required>
+            <md-hint>
+              <span [hidden]="name.pristine">
+              <span [hidden]="!name.errors?.required">Ce champ est obligatoire </span>
+              </span>
+            </md-hint>
+          </md-input-container>
+        </p>
+        <button md-raised-button type="submit" >Valider</button>
+    </form>
+  </md-card-content>
+</md-card>
+
+

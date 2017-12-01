@@ -1,0 +1,70 @@
+<md-toolbar color='primary'>
+  <span>Wellness Program</span>
+
+</md-toolbar>
+
+
+<div fxLayoutAlign="center">
+  <md-card class="challenge-card">
+    <md-card-header fxLayoutAlign="start">
+      <div md-card-avatar class="example-header-image"></div>
+      <md-card-title><h1>{{ challenge.name | uppercase }}</h1></md-card-title>
+      <!-- <md-card-subtitle>{{ challenge.name }}</md-card-subtitle> -->
+    </md-card-header><hr>
+    <!--<img md-card-image src="assets/challenge.jpg">-->
+    <md-card-content class="content" >
+      <h4>Description:</h4>
+      <p>
+        {{ challenge.description }}
+      </p>
+      <h4>Date/heure de début:</h4>
+      <p>
+        {{ challenge.startDate | date }}
+      </p>
+      <h4>Date/heure de fin:</h4>
+      <p>
+        {{ challenge.endDate | date }}
+      </p>
+      <h4>Equipes:</h4>
+      <div *ngFor="let team of challenge.teams">
+        <md-chip-list>
+          <md-chip *ngIf="team != null">{{ team }}</md-chip>
+        </md-chip-list>
+      </div>
+    </md-card-content>
+    <md-card-actions fxLayoutAlign="end">
+      <button md-button (click)="sendMail()">REJOINDRE</button>
+      <button md-button [routerLink]="['/home-page-user/'+idAdmin+'/challenges']">CHALLENGES</button>
+    </md-card-actions>
+  </md-card>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="container">
+  <h1>{{ challenge.name }}</h1>
+  <dl class="list">
+    <dt>Nom challenge</dt>
+    <dd>{{ challenge.name }}</dd>
+    <dt>Description challenge</dt>
+    <dd>{{ challenge.description }}</dd>
+  </dl>
+</div>
+
+
+<div class="row">
+  <div class="col-md-12">
+    <a [routerLink]="['/challenge-edit', challenge._id]" class="btn btn-success">EDIT</a>
+    <button class="btn btn-danger" type="button" (click)="deleteChallenge(challenge._id)">DELETE</button>
+  </div>
+</div> -->

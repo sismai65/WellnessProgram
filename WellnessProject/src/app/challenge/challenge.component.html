@@ -1,0 +1,102 @@
+<md-toolbar color='primary'>
+  <span>Wellness Program</span>
+
+  <span class="app-toolbar-filler"></span>
+  <button md-button>{{ user.firstName | uppercase }} {{ user.lastName | uppercase}}</button>
+</md-toolbar>
+
+<md-card class="card" >
+  <md-card-header fxLayoutAlign="center">
+    <md-card-title >
+      <h2>LISTE DES Challenges</h2>
+    </md-card-title>
+  </md-card-header>
+  <md-grid-list cols="3"  rowHeight="3:1" >
+    <md-grid-tile fxLayoutGap="10px" *ngFor="let challenge of challenges">
+      <md-list class="app-list">
+        <md-list-item>
+          <h3 md-line> <md-icon md-prefix>group_work</md-icon> {{ challenge.name | uppercase}}</h3>
+        </md-list-item>
+        <div fxLayoutAlign="end">
+          <a  md-raised-button color="primary"  [routerLink]="[challenge._id]">DETAILS</a>
+        </div>
+      </md-list>
+    </md-grid-tile>
+  </md-grid-list>
+</md-card>
+
+<!--<md-grid-list class="grid" cols="2" rowHeight="2:1">
+  <md-grid-tile *ngFor="let challenge of challenges">
+    <md-card class="card" >
+      <md-card-header fxLayoutAlign="start">
+        <md-card-title> <h3>{{challenge.name | uppercase}}</h3></md-card-title>
+      </md-card-header>
+      <img md-card-image height="150px" src="assets/challenge.jpg">
+      <md-card-content fxLayoutAlign="center">
+        <p>
+          {{challenge.description}}
+        </p>
+      </md-card-content>
+      <md-card-actions fxLayoutAlign="end">
+        <a  md-raised-button [routerLink]="[challenge._id]">DETAILS</a>
+      </md-card-actions>
+    </md-card>
+  </md-grid-tile>
+</md-grid-list>-->
+
+
+<span class="app-action-right">
+  <a md-fab color="primary" (click)="goToAddChallengePage()"><md-icon>add_box</md-icon></a>
+</span>
+
+<span class="app-action-left">
+  <a md-fab color="primary" (click)="goTohomePage()"><md-icon>home</md-icon></a>
+</span>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="container">
+  <h1>Challenge</h1>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Nom</th>
+        <th>Description</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let challenge of challenges">
+        <td>{{ challenge.name }}</td>
+        <td>{{ challenge.description }}</td>
+
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<h1>Liste challenges
+  <a [routerLink]="['/add-challenge']" class="btn btn-default btn-lg">
+    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+  </a>
+  <a md-fab [routerLink]="['/add-challenge']"><md-icon>check</md-icon></a>
+</h1> -->

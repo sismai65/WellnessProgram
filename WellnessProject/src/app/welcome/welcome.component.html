@@ -1,0 +1,19 @@
+<md-toolbar color='primary'>
+  <span>Wellness Program</span>
+
+  <span class="app-toolbar-filler"></span>
+  <a md-raised-button routerLink="/signup">NOUVEAU COMPTE</a>
+
+</md-toolbar>
+
+<h1 fxLayoutAlign="center">
+  BIENVENUE AU PROGRAMME BIEN-ETRE
+</h1>
+
+<div class="button">
+  <p fxLayoutAlign="center" fxLayoutGap="20px">
+    <button md-raised-button (click)="goTOLoginPageAdmin()">Je suis Administrateur</button>
+    <button md-raised-button (click)="goTOLoginPageUser()" >Je suis Utilisateur</button>
+  </p>
+</div>
+

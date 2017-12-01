@@ -1,0 +1,36 @@
+<md-toolbar color='primary'>
+  <span>Wellness Program</span>
+
+  <span class="app-toolbar-filler"></span>
+  <button md-button>{{ user.firstName | uppercase }} {{ user.lastName | uppercase}}</button>
+  <button md-icon-button [mdMenuTriggerFor]="menu">
+    <md-icon>more_vert</md-icon>
+  </button>
+  <md-menu #menu="mdMenu">
+    <button md-menu-item (click)="logout()">
+      <md-icon>date_range</md-icon>
+      <span>Quitter</span>
+    </button>
+  </md-menu>
+</md-toolbar>
+<nav md-tab-nav-bar >
+  <a md-tab-link *ngFor="let link of Links" [routerLink]="link.route"
+     routerLinkActive #rla="routerLinkActive" [active]="rla.isActive">
+    {{link.page}}
+  </a>
+</nav>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

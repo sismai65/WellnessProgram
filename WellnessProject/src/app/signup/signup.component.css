@@ -1,0 +1,27 @@
+/*.example-form {
+  width: 50%;
+  margin-left: 20px;
+  margin-top: 40px;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.width{
+  width: 50%
+}*/
+
+
+.card{
+	width: 50%;
+  margin: 20px;
+}
+
+.full-width{
+	width: 100%;
+}
+
+form{
+	text-align: center;
+}

@@ -1,0 +1,33 @@
+<md-toolbar color='primary'>
+  <span>Wellness Program</span>
+
+  <span class="app-toolbar-filler"></span>
+</md-toolbar>
+
+<md-card  class="card-width">
+  <md-card-header fxLayoutAlign="center stretch"><h2>Modifier les informations d'une Equipe </h2></md-card-header><hr>
+  <md-card-content>
+    <form (ngSubmit)="updateTeam(team._id)" #editTeamForm="ngForm" class="team-form">
+    	<p>
+          <md-input-container class="full-width" dividerColor="{{name.errors ? 'warn' : 'primary'}}">
+            <input type="text" id="name" name="name" mdInput placeholder="Entrer le nom de l'équipe"
+            [(ngModel)]="team.name" #name="ngModel" required>
+            <md-hint>
+              <span [hidden]="name.pristine">
+              <span [hidden]="!name.errors?.required">Ce champ est obligatoire </span>
+              </span>
+            </md-hint>
+          </md-input-container>
+
+          <!--<md-input-container class="full-width" >
+            <input type="text" id="members" name="members" mdInput [(ngModel)]="team.members" #members="ngModel">
+          </md-input-container>-->
+        </p>
+        <p>
+          <a md-raised-button (click)="getUsersList()">AJOUTER UN MEMBRE</a>
+          <a md-raised-button routerLink=".">SUPPRIMER UN MEMBRE</a>
+        </p><hr>
+        <p><button md-raised-button type="submit" [disabled]="editTeamForm.form.invalid">Valider</button></p>
+    </form>
+  </md-card-content>
+</md-card>

@@ -1,0 +1,42 @@
+<div fxLayoutAlign="center">
+  <md-card  class="title-card"><h1>Liste des Utilisateurs </h1></md-card>
+</div>
+
+<form (ngSubmit)="updateMembersTeam(idTeam)" >
+	<md-card class="card" *ngFor="let user of users">
+
+			 <md-card-header>
+				 <div md-card-avatar class="example-header-image">
+				 	<img height="25px" md-list-avatar src="assets/user.jpg" alt="team picture">
+				 </div>
+				<md-card-title> {{ user.firstName}} {{ user.lastName }} </md-card-title>
+			</md-card-header>
+			<md-card-content>
+			    <p >
+			     Email: {{ user.email }}
+			    </p>
+        <p >
+          Entité: {{ user.entity }}
+        </p>
+		  </md-card-content>
+    <div fxLayoutAlign="end">
+      <md-checkbox name="selected" [value]="user.firstName" [checked]="checked" [(ngModel)]="user.selected"
+                   (change)="updateChecked()" >
+      </md-checkbox>
+    </div>
+
+	</md-card>
+
+  <span class="app-action">
+    <button md-fab color="primary" type="submit"><md-icon>check</md-icon></button>
+  </span>
+</form>
+
+
+
+
+
+
+
+
+
