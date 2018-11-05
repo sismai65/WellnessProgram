@@ -56,10 +56,4 @@ export class TeamDetailComponent implements OnInit {
 
 
 
-// navigate to the the challenges' list
-/*goToListChallenges(){
-    this.router.navigate(['/challenges-list']);
- }*/
-
-
 }
